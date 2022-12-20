@@ -1,4 +1,3 @@
-import { GoogleOauthController } from './oauth2/google/google_oauth.controller';
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
@@ -25,7 +24,7 @@ import { EmailService } from '@/api/email/email.service';
     }),
     TypeOrmModule.forFeature([User, Role]),
   ],
-  controllers: [AuthController, GoogleOauthController],
+  controllers: [AuthController],
   providers: [AuthService, AuthHelper, JwtStrategy, RoleService, EmailService]
 })
 export class AuthModule { }
